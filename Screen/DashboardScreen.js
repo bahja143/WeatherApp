@@ -32,6 +32,7 @@ export default function DashboardScreen() {
 
   const handleLoad = async (latitude, longitude) => {
     try {
+      setCity("");
       setError(false);
       setRefreshing(true);
       const response = await axios.get(

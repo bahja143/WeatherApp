@@ -8,7 +8,7 @@ export default function item({ amount, title, Icon }) {
       {Icon}
       <View style={styles.itemTextCont}>
         <Text style={styles.itemText}>{title}</Text>
-        <Text style={styles.itemText}>{amount && 0} </Text>
+        <Text style={styles.itemText}>{amount ? amount : 0} </Text>
       </View>
     </View>
   );
