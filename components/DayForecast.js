@@ -2,19 +2,20 @@ import { View, Text, StyleSheet, Image } from "react-native";
 
 import colors from "../config/colors.json";
 
-export default function DayForecast({ item, image }) {
+export default function DayForecast({ title, date, uri }) {
   return (
     <View style={styles.dayCont}>
-      <Text style={styles.daySubt}> {item}</Text>
-      <Image style={styles.dayImage} source={image} />
-      <Text style={styles.dayTemp}>23</Text>
+      <Text style={styles.daySubt}>{date}</Text>
+      <Image style={styles.dayImage} source={{ uri }} />
+      <Text style={styles.dayTemp}>{title ? title : 0}</Text>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   daySubt: {
-    fontWeight: "400",
+    fontWeight: "500",
+    color: colors.medium,
   },
   dayTemp: {
     fontSize: 18,

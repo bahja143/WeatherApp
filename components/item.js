@@ -1,16 +1,14 @@
 import { View, Text, StyleSheet } from "react-native";
-import { Feather } from "@expo/vector-icons";
 
 import colors from "../config/colors.json";
 
-export default function item(title, item) {
-  console.log(item);
+export default function item({ amount, title, Icon }) {
   return (
     <View style={styles.item}>
-      <Feather name="wind" size={24} color={colors.primary} />
+      {Icon}
       <View style={styles.itemTextCont}>
-        <Text style={styles.itemText}>wind</Text>
-        <Text style={styles.itemText}>0 Km/h</Text>
+        <Text style={styles.itemText}>{title}</Text>
+        <Text style={styles.itemText}>{amount && 0} </Text>
       </View>
     </View>
   );
@@ -22,12 +20,13 @@ const styles = StyleSheet.create({
   },
   itemText: {
     fontSize: 15,
-
+    marginBottom: 2.5,
     fontWeight: "500",
     color: colors.black,
   },
   item: {
     width: "45%",
+    elevation: 3,
     borderRadius: 5,
     paddingVertical: 10,
     flexDirection: "row",
