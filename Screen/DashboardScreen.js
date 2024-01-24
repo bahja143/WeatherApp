@@ -128,7 +128,6 @@ export default function DashboardScreen() {
       </Modal>
       <FlatList
         data={[1]}
-        keyboardShouldPersistTaps="always"
         refreshing={refreshing}
         onRefresh={handlePermission}
         renderItem={() => (
@@ -136,8 +135,9 @@ export default function DashboardScreen() {
             <View style={styles.searchCont}>
               <TextInput
                 value={city}
-                placeholder="Search City"
                 style={styles.textInput}
+                placeholder="Search City"
+                onSubmitEditing={handleSearch}
                 onChangeText={(text) => setCity(text)}
               />
               <TouchableOpacity onPress={handleSearch} style={styles.btn}>
@@ -232,6 +232,7 @@ export default function DashboardScreen() {
             </View>
           </View>
         )}
+        keyboardShouldPersistTaps="always"
       />
     </>
   );
